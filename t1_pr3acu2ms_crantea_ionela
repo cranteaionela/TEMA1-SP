@@ -1,12 +1,12 @@
-hold on; 
+hold on; %cu aceasta functie se vor reprezenta pe aceeasi figura semnalele
 %rezolutie temporara de 2ms
 r1=rand(1);
 r2=rand(1);
 t=0:.002:0.25;
-x1=r1*square(2*pi*4*t,100);
+x1=r1*square(2*pi*4*t,100); %am ales factorul de umplere 100 pentru a avea un nivel ct
 x2=-r2*square(2*pi*4*t,100);
 plot(t,x1);
-plot(t-0.25,x2);
+plot(t-0.25,x2);%astfel se va deplasa primuol semnal la stangul primului
 xlabel('T [s]')
 ylabel('U [V]')
 title('Semnal dreptunghiular multinivel aleator')
