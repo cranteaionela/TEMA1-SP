@@ -1,0 +1,44 @@
+%Se va genera un semnal cu rezolutie temporara de 2ms, 20ms
+%200ms pentru un semnal continuu de tipul:
+%1. Semnal dreptunghiular periodic cu
+% Perioada: 2 s.
+% Factor de umplere: 25%.
+% Nivelul maxim: +0.5.
+% Nivelul minim: -1.
+
+% Rezolutie temporara de 2 ms
+t=0:0.002:6;   %se vor afisa 3 perioade
+f=0.5;
+w=2*pi*f;
+duty=25;
+niv=0.25;
+ampl=0.75; %cat % din amplitudine sa fie afisat
+              %cum componenta continua este -0.25(niv max=+0.5 si niv                    min=-1=>comp continua=(niv max+niv min)/2),rezulta ca amplitudinea=niv max+comp continua.
+x=(ampl*square(w*t,duty))-niv;
+subplot(3,1,1) %vor fi afisate toate cele 3 grafice pe aceeasi pagina
+plot(t,x),grid,xlabel('t [x]'),ylabel('A [V]')
+
+%rezolutie temporara de 20 ms
+t=0:0.02:6;
+f=0.5;
+w=2*pi*f;
+duty=25;
+niv=0.25;
+ampl=0.75;
+x=(ampl*square(w*t,duty))-niv;
+subplot(3,1,2)
+plot(t,x),grid,xlabel('t [x]'),ylabel('A [V]')
+
+
+%rezolutie temporara de 200 ms
+t=0:0.2:6;
+f=0.5;
+w=2*pi*f;
+duty=25;
+niv=0.25;
+ampl=0.75;
+x=(ampl*square(w*t,duty))-niv;
+subplot(3,1,3)
+plot(t,x),grid,xlabel('t [x]'),ylabel('A [V]')
+
+
