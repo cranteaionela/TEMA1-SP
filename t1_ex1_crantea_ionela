@@ -12,8 +12,9 @@ f=0.5;
 w=2*pi*f;
 duty=25;
 niv=0.25;
-ampl=0.75; %cat % din amplitudine sa fie afisat
-              %cum componenta continua este -0.25(niv max=+0.5 si niv                    min=-1=>comp continua=(niv max+niv min)/2),rezulta ca amplitudinea=niv max+comp continua.
+ampl=0.75; 
+           %cum componenta continua este -0.25(niv max=+0.5 si niv min=-1=>
+           %=>comp continua=(niv max+niv min)/2),rezulta ca amplitudinea=niv max+comp continua.
 x=(ampl*square(w*t,duty))-niv;
 subplot(3,1,1) %vor fi afisate toate cele 3 grafice pe aceeasi pagina
 plot(t,x),grid,xlabel('t [x]'),ylabel('A [V]')
